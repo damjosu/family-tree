@@ -22,6 +22,7 @@ public class Person
     {
         this.name = name;
         this.age = age;
+        children = new ArrayList<>();
     }
     
     /**
@@ -56,5 +57,41 @@ public class Person
     {
         children.add(child);
     }
- 
+    
+    /**
+     * Gets the person's name.
+     */
+    private String getName()
+    {
+        return name;
+    }
+    
+    /**
+     * Gets the person's age.
+     */
+    private int getAge()
+    {
+        return age;
+    }
+    
+    /**
+     * Shows the parents' names and ages. 
+     */    
+    public void showParentsData()
+    {
+        System.out.println("Father's name: " + father.getName() + "\n" + "Father's age: " + father.getAge());
+        System.out.println("Mother's name: " + mother.getName() + "\n" + "Mother's age: " + mother.getAge());
+    }
+    
+    /**
+     * Shows children's names and ages.
+     */
+    public void showChildrenData()
+    {
+        for(Person child: children)
+        {
+            System.out.println("Child's name: " + child.getName() + "\n" + "Child's age: " + child.getAge());
+        }
+    }
+    
 }
