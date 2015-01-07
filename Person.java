@@ -14,7 +14,7 @@ public class Person
     private Person mother;
     // Person's children/s.
     private ArrayList<Person> children;
-    
+
     /**
      * Person's constructor, which you can set the person's name and age.
      */
@@ -24,7 +24,7 @@ public class Person
         this.age = age;
         children = new ArrayList<>();
     }
-    
+
     /**
      * Prints the person's name and age.
      */
@@ -33,7 +33,7 @@ public class Person
         System.out.println("Name: " + name);
         System.out.println("Age: " + age);
     }
-    
+
     /**
      * Sets the person's father.
      */
@@ -41,7 +41,7 @@ public class Person
     {
         this.father = father;        
     }
-    
+
     /**
      * Sets the person's mother.
      */
@@ -49,7 +49,7 @@ public class Person
     {
         this.mother = mother;
     }
-    
+
     /**
      * Sets the person's child/s.
      */
@@ -57,7 +57,7 @@ public class Person
     {
         children.add(child);
     }
-    
+
     /**
      * Gets the person's name.
      */
@@ -65,7 +65,7 @@ public class Person
     {
         return name;
     }
-    
+
     /**
      * Gets the person's age.
      */
@@ -73,7 +73,7 @@ public class Person
     {
         return age;
     }
-    
+
     /**
      * Shows the parents' names and ages. 
      */    
@@ -82,7 +82,7 @@ public class Person
         System.out.println("Father's name: " + father.getName() + "\n" + "Father's age: " + father.getAge());
         System.out.println("Mother's name: " + mother.getName() + "\n" + "Mother's age: " + mother.getAge());
     }
-    
+
     /**
      * Shows children's names and ages.
      */
@@ -93,7 +93,7 @@ public class Person
             System.out.println("Child's name: " + child.getName() + "\n" + "Child's age: " + child.getAge());
         }
     }
-    
+
     /**
      * If the person has children returns true, false otherwise.
      */
@@ -106,7 +106,7 @@ public class Person
         }  
         return gotChildren;
     }
-    
+
     /**
      * Returns the number of children the person has.
      */
@@ -114,5 +114,31 @@ public class Person
     {
         int childrenNumber = children.size();
         return childrenNumber;
+    }
+
+    /**
+     * If the person has brother returns true, false otherwise.
+     */
+    public boolean hasBrothers()
+    {
+        boolean brothers = false;
+        if (father != null)        
+        {
+            int childrenNumber = father.getNumberOfChildren();
+            if (childrenNumber > 1)
+            {
+                brothers = true;
+            }
+        }
+        
+        if (mother != null)        
+        {
+            int childrenNumber = mother.getNumberOfChildren();
+            if (childrenNumber > 1)
+            {
+                brothers = true;
+            }
+        }
+        return brothers; 
     }
 }
