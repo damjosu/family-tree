@@ -94,4 +94,25 @@ public class Person
         }
     }
     
+    /**
+     * If the person has children returns true, false otherwise.
+     */
+    public boolean hasChildren()
+    {
+        boolean gotChildren = false;
+        if (children.size() > 0)
+        {
+            gotChildren = true;
+        }  
+        return gotChildren;
+    }
+    
+    /**
+     * Returns the number of children the person has.
+     */
+    public int getNumberOfChildren()
+    {
+        int childrenNumber = children.size();
+        return childrenNumber;
+    }
 }
